@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-
+    
 </head>
 <body>
     <div class="scroll-up-btn">
@@ -252,20 +252,21 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form action="#">
+                    <form action="#contact" method="post">
+                        {% csrf_token %}
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Name" required>
+                                <input type="text" name="name" placeholder="Name" required>
                             </div>
-                            <div class="field email">
-                                <input type="email" placeholder="Email" required>
+                            <div class="field email" >
+                                <input type="email" name="email" placeholder="Email" required>
                             </div>
                         </div>
-                        <div class="field">
-                            <input type="text" placeholder="Subject" required>
+                        <div class="field" >
+                            <input type="text" name="subject" placeholder="Subject" required>
                         </div>
-                        <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                        <div class="field textarea" >
+                            <textarea cols="30" rows="10" name="message" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button-area">
                             <button type="submit">Send message</button>
